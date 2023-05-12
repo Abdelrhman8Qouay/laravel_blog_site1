@@ -1,0 +1,21 @@
+
+.create_blog_page {
+
+    form {
+
+        .imgLabel {
+            width: 100%;
+            display: block;
+            cursor: pointer;
+            // img {
+            //     max-width: 100%;
+            //     max-height: 100%;
+            //     object-fit: cover;
+            // }
+        }
+
+        #textArea {
+            height: 350px;
+        }
+    }
+}

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaticController;
 
@@ -17,5 +18,7 @@ use App\Http\Controllers\StaticController;
 Route::get('/', [StaticController::class, 'index']);
 
 Route::get('/about', [StaticController::class, 'about']);
+
+Route::resource('/blogs', BlogsController::class );
 
 Auth::routes();

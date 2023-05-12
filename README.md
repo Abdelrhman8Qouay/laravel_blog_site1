@@ -125,3 +125,11 @@ Note: if not work then add to (package.json)file scripts{"watch": "npm run watch
 
 ## Go To Create The Database On Localhost:
 make sure from the all information in (.env)file
+
+go to the phpMyAdmin and Create a new database
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=laravel_chatbot1
+    DB_USERNAME=root
+    DB_PASSWORD=

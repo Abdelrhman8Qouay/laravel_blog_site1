@@ -1,8 +1,54 @@
 // Fonts
 @import url('https://fonts.bunny.net/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;600;700&display=swap'); // Oswald Font
 
 // Variables
 @import 'variables';
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+// Center Box
+.center-prop {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+
+
+// all sass files from Layouts
+@import './layouts/header';
+
+// all sass files from Pages
+@import './pages/index';
+
+// all sass files from Blogs
+@import './blogs/index';
+@import './blogs/create';
+
+
+.titlePart {
+    font-size: 21px;
+    font-weight: bold;
+    color: #adafb0;
+    display: block;
+    margin-bottom: 22px;
+}
+
+.quickBtn {
+    text-decoration: none;
+    color: rgb(14, 253, 173);
+    transition: 0.4s;
+    margin: 5px;
+    &:hover {
+        color: rgb(29, 211, 150);
+    }
+}
