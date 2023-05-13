@@ -40,7 +40,7 @@
                     <!--Grid column-->
                     <div class="col-auto">
                     <p class="pt-2">
-                        <strong>Sign up for our newsletter</strong>
+                        <strong>login or register to write</strong>
                     </p>
                     </div>
                     <!--Grid column-->
@@ -58,9 +58,9 @@
                     <!--Grid column-->
                     <div class="col-auto">
                     <!-- Submit button -->
-                    <button type="submit" class="btn btn-outline-light mb-4">
-                        Subscribe
-                    </button>
+                    <a href="{{ route('register') }}" class="btn btn-outline-light mb-4">
+                        Register
+                    </a>
                     </div>
                     <!--Grid column-->
                 </div>
@@ -118,12 +118,12 @@
 
             <!--Grid column-->
             <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Footer Content</h5>
+                <h5 class="text-uppercase">BLOG CONTENT</h5>
 
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                    molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
-                    aliquam voluptatem veniam, est atque cumque eum delectus sint!
+                    Hi master, Go login or register now to be a big writer, and you can
+                    writing your important posts for any topic you want to post on it,
+                    do not forget to be a part with us as friends together 🎆🎇.
                 </p>
                 </div>
                 <!--Grid column-->

@@ -35,7 +35,7 @@
             <strong class="me-auto">Blog</strong>
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
-            <div class="toast-body">
+            <div class="toast-body bg-success">
                 {{ Session::get('flash_success') }}
             </div>
         </div>
@@ -50,7 +50,7 @@
             <strong class="me-auto">Blog</strong>
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
-            <div class="toast-body">
+            <div class="toast-body bg-danger">
                 {{ Session::get('flash_error') }}
             </div>
         </div>

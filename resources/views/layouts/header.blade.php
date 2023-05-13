@@ -31,11 +31,13 @@
                         <li><a class="dropdown-item" href="#">More...</a></li>
                     </ul>
                 </li>
+            </ul>
 
+            <ul class="navbar-nav ms-auto">
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('blogs.create') }}">Write now</a>
+                        <a class="nav-link" href="{{ route('register') }}">Write now</a>
                     </li>
                     @if (Route::has('login'))
                         <li class="nav-item">
@@ -55,7 +57,7 @@
                     <li class="nav-item dropdown">
 
                         <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="/images/avatars/{{ Auth::user()->avatar }}" alt="mdo" width="25" height="25" class="rounded-circle">
+                            <img src="/images/avatars/{{ Auth::user()->avatar }}" alt="mdo" width="20" height="20" class="rounded-circle">
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -72,11 +74,6 @@
                     </li>
                 @endguest
             </ul>
-
-            {{-- Search bar --}}
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-            </form>
         </div>
     </div>
 </nav>

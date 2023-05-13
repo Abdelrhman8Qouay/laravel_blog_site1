@@ -29,10 +29,13 @@
 
 // all sass files from Pages
 @import './pages/index';
+@import './login';
+@import './register';
 
 // all sass files from Blogs
 @import './blogs/index';
 @import './blogs/create';
+@import './blogs/show';
 
 
 .titlePart {

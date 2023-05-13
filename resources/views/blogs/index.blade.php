@@ -17,7 +17,7 @@
             <h1 style="color: darkgrey">BLOG PAGE</h1>
             <hr class="my-3">
 
-            <div class="contentShow text-white mb-5">
+            <div class="contentShow text-white pb-5 flex-sm-column flex-md-row">
 
                 @foreach ($blogs as $blog)
                     <a href="/blogs/{{ $blog->SLUG_BLOG }}">

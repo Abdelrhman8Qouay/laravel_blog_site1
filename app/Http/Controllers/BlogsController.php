@@ -40,16 +40,15 @@ class BlogsController extends Controller
             'content' => 'required'
         ]);
 
-        $slug = Str::slug($request->title,"-");
+        // To Make the Title Is Unique
+        $newTitle =  uniqid().' '.$request->title;
+
+        $slug = Str::slug($newTitle,"-");
 
         $newImgName = uniqid(). "-$slug.".$request->image->extension();
         $request->image->move(public_path('images/postImgs'), $newImgName);
 
         $Blog = new Blog([
-            // 'user_id' => $request->get('user_id'),
-            // 'title' => $request->get('title'),
-            // 'status' => $request->get('status'),
-            // 'subject' => $request->get('subject'),
             'TITLE_BLOG' => $request->title,
             'DESC_BLOG' => $request->desc,
             'POST_CONTENT_BLOG' => $request->content,
@@ -69,31 +68,55 @@ class BlogsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id) {
-        //
+    public function show(string $slug) {
+        return view('blogs.show')->with('blog', Blog::where('SLUG_BLOG', $slug)->first());
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        //
+    public function edit(string $slug) {
+        return view('blogs.edit')->with('blog', Blog::where('SLUG_BLOG', $slug)->first());
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        //
+    public function update(Request $request, string $slug) {
+
+        $request->validate([
+            'title' => 'required',
+            'desc' => 'required',
+            'image' => 'required|mimes:jpg,png,jpeg,gif|max:5048',
+            'content' => 'required'
+        ]);
+
+        // To Make the Title Is Unique
+        $newTitle =  uniqid().' '.$request->title;
+
+        $newSlug = Str::slug($newTitle,"-");
+
+        $newImgName = uniqid(). "-$newSlug.".$request->image->extension();
+        $request->image->move(public_path('images/postImgs'), $newImgName);
+
+
+        Blog::where('SLUG_BLOG', $slug)->update([
+            'TITLE_BLOG' => $request->title,
+            'DESC_BLOG' => $request->desc,
+            'POST_CONTENT_BLOG' => $request->content,
+            'SLUG_BLOG' => $newSlug,
+            'MAIN_IMG_BLOG' => $newImgName,
+            'USER_ID' => auth()->user()->id,
+        ]);
+
+        return redirect('/blogs/'. $newSlug)->with('flash_success', 'Success Update Post.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
+    public function destroy(string $slug) {
+        Blog::where('SLUG_BLOG', $slug)->delete();
+        return redirect('/blogs')->with('flash_success', 'Success Delete Post.');
     }
 }
